@@ -1,6 +1,7 @@
 ### Pomodoro Timer
 
 A React component for pomodoro timer.
+
 ![image](https://github.com/user-attachments/assets/98e3eb1d-4ebe-436b-890a-ca8cfcdc140c)
 
 ### Installation
