@@ -1,0 +1,50 @@
+{
+  "name": "pomodoro-timer",
+  "version": "0.0.4",
+  "description": "A React component for displaying time grid cells",
+  "main": "dist/index.js",
+  "module": "./dist/pomodoro-timer.js",
+  "types": "./dist/pomodoro-timer.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm vite build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5",
+    "vite": "^6.1.1",
+    "vite-plugin-dts": "^3.7.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/pomodoro-timer.js",
+      "require": "./dist/pomodoro-timer.umd.js",
+      "types": "./dist/pomodoro-timer.d.ts"
+    },
+    "./style.css": "./dist/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbgf/pomodoro-timer.git"
+  },
+  "keywords": [
+    "timemanagement",
+    "pomodoro",
+    "timer"
+  ],
+  "author": "jb1010",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbgf/pomodoro-timer/issues"
+  },
+  "homepage": "https://www.5minutetimer.app/time-account"
+}
