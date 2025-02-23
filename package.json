@@ -1,7 +1,7 @@
 {
   "name": "pomodoro-timer",
   "version": "0.0.5",
-  "description": "A React component for displaying time grid cells",
+  "description": "A React component for pomodoro timer",
   "main": "dist/index.js",
   "module": "./dist/pomodoro-timer.js",
   "types": "./dist/pomodoro-timer.d.ts",
