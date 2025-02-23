@@ -1,5 +1,5 @@
 {
-  "name": "pomodoro-timer",
+  "name": "@jb1010/pomodoro-timer",
   "version": "0.0.5",
   "description": "A React component for pomodoro timer",
   "main": "dist/index.js",
