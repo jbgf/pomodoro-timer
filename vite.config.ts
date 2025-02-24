@@ -9,7 +9,10 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      include: [resolve(__dirname, "./index.tsx")],
+      include: [
+        resolve(__dirname, "./index.tsx"),
+        resolve(__dirname, "./types/**/*")
+      ],
       rollupTypes: true,
     }),
   ],

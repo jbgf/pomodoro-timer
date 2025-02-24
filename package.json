@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^22.13.5",
     "@types/react": "^18",
+    "@types/react-circular-progressbar": "^1.1.0",
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^4.3.4",
     "react-circular-progressbar": "2.1.0",
