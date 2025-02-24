@@ -1,6 +1,6 @@
 {
   "name": "@j1010/pomodoro-timer",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A React component for pomodoro timer",
   "main": "dist/index.js",
   "module": "./dist/pomodoro-timer.js",
@@ -10,7 +10,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm vite build"
+    "build": "pnpm vite build",
+    "publish": "pnpm build && npm publish --access public"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
