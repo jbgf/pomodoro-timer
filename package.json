@@ -17,12 +17,13 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
+    "@types/node": "^22.13.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@vitejs/plugin-react": "^4.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5",
     "vite": "^6.1.1",
-    "vite-plugin-dts": "^3.7.0"
+    "vite-plugin-dts": "^3.9.1"
   },
   "exports": {
     ".": {
