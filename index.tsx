@@ -1,9 +1,10 @@
 'use client'
 
+import React from 'react'
 import { useState, useEffect } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
-import { PomodoroSettings, PomodoroSession } from '../../types'
+import { PomodoroSettings, PomodoroSession } from './types'
 
 interface Props {
     settings: PomodoroSettings
@@ -12,7 +13,7 @@ interface Props {
 export default function PomodoroTimer({ settings }: Props) {
     const [timeLeft, setTimeLeft] = useState(settings.workDuration * 60)
     const [isRunning, setIsRunning] = useState(false)
-    const [isWorkMode, setIsWorkMode] = useState(true)
+    const [isWorkMode, setIsWorkMode] = useState(true)  
     const [sessionCount, setSessionCount] = useState(0)
 
     useEffect(() => {
