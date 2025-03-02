@@ -10,11 +10,12 @@ declare interface PomodoroSettings {
     autoStartPomodoros: boolean;
 }
 
-declare function PomodoroTimer({ settings }: Props): default_2.JSX.Element;
+declare function PomodoroTimer({ settings, content }: Props): default_2.JSX.Element;
 export default PomodoroTimer;
 
 declare interface Props {
     settings: PomodoroSettings;
+    content?: default_2.ReactNode;
 }
 
 export { }

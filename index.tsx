@@ -7,13 +7,14 @@ import 'react-circular-progressbar/dist/styles.css'
 import { PomodoroSettings, PomodoroSession } from './types'
 
 interface Props {
-    settings: PomodoroSettings
+    settings: PomodoroSettings,
+    content?: React.ReactNode
 }
 
-export default function PomodoroTimer({ settings }: Props) {
+export default function PomodoroTimer({ settings, content }: Props) {
     const [timeLeft, setTimeLeft] = useState(settings.workDuration * 60)
     const [isRunning, setIsRunning] = useState(false)
-    const [isWorkMode, setIsWorkMode] = useState(true)  
+    const [isWorkMode, setIsWorkMode] = useState(true)
     const [sessionCount, setSessionCount] = useState(0)
 
     useEffect(() => {
@@ -96,6 +97,8 @@ export default function PomodoroTimer({ settings }: Props) {
                     })}
                 />
             </div>
+
+            {!!content && <div>{content}</div>}
 
             <div className="flex gap-4 mb-6 justify-center">
                 <button
