@@ -1,0 +1,10 @@
+{
+  "name": "pomodoro-timer-test",
+  "version": "1.0.0",
+  "description": "测试Pomodoro Timer的导出",
+  "main": "test-export-es.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test-export-es.js"
+  }
+}

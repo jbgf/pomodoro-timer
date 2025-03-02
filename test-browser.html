@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试PomodoroTimer导出</title>
+  <script>
+    // 添加日志查看window对象
+    console.log('初始window对象:', window);
+  </script>
+</head>
+
+<body>
+  <h1>测试PomodoroTimer导出</h1>
+  <div id="results"></div>
+
+  <!-- 引入React -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- 引入PomodoroTimer -->
+  <script src="./dist/pomodoro-timer.js"></script>
+
+  <script>
+    // 添加日志查看导出情况
+    console.log('加载后window对象:', window);
+    console.log('PomodoroTimer:', window.PomodoroTimer);
+
+    // 显示结果
+    const results = document.getElementById('results');
+
+    function addResult(label, value) {
+      const p = document.createElement('p');
+      p.innerHTML = `<strong>${label}:</strong> ${value}`;
+      results.appendChild(p);
+    }
+
+    // 检查PomodoroTimer
+    addResult('PomodoroTimer存在', window.PomodoroTimer !== undefined);
+    addResult('PomodoroTimer类型', typeof window.PomodoroTimer);
+    addResult('是否为函数', typeof window.PomodoroTimer === 'function');
+
+    if (window.PomodoroTimer) {
+      addResult('属性列表', Object.keys(window.PomodoroTimer).join(', ') || '无属性');
+    }
+  </script>
+</body>
+
+</html>

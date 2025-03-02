@@ -52,7 +52,7 @@ export default defineConfig({
       entry: resolve(__dirname, "./index.tsx"),
       name: 'PomodoroTimer',
       formats: ['es', 'umd'],
-      fileName: (format) => `pomodoro-timer.${format === 'es' ? 'js' : 'umd.js'}`,
+      fileName: (format) => `pomodoro-timer${format === 'es' ? '' : '.umd'}.js`,
     },
     outDir: resolve(__dirname, "./dist"),
     rollupOptions: {
@@ -68,9 +68,6 @@ export default defineConfig({
           }
           return assetInfo.name || '';
         },
-        entryFileNames: (chunkInfo) => {
-          return `pomodoro-timer${chunkInfo.name === 'index' ? '' : `.${chunkInfo.name}`}.js`;
-        }
       },
     },
     cssCodeSplit: false,

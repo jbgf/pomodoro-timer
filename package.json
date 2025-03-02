@@ -1,11 +1,11 @@
 {
   "name": "@j1010/pomodoro-timer",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A React component for pomodoro timer",
-  "main": "dist/index.js",
+  "main": "./dist/pomodoro-timer.umd.js",
   "module": "./dist/pomodoro-timer.js",
   "types": "./dist/pomodoro-timer.d.ts",
-  "style": "dist/index.css",
+  "style": "./dist/pomodoro-timer.css",
   "files": [
     "dist"
   ],
@@ -34,7 +34,7 @@
       "require": "./dist/pomodoro-timer.umd.js",
       "types": "./dist/pomodoro-timer.d.ts"
     },
-    "./style.css": "./dist/index.css"
+    "./style.css": "./dist/pomodoro-timer.css"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试PomodoroTimer组件</title>
+  <link rel="stylesheet" href="./dist/pomodoro-timer.css">
+  <script>
+    // 添加日志查看导出情况
+    console.log('Window对象:', window);
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- 引入React -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- 引入PomodoroTimer -->
+  <script src="./dist/pomodoro-timer.js" type="module"></script>
+
+  <script type="module">
+    // 添加日志查看导出情况
+    console.log('Window对象(加载后):', window);
+    console.log('PomodoroTimer:', window.PomodoroTimer);
+
+    // 尝试使用PomodoroTimer
+    if (window.PomodoroTimer) {
+      const settings = {
+        workDuration: 25,
+        breakDuration: 5,
+        autoStartBreaks: false,
+        autoStartPomodoros: false
+      };
+
+      const app = document.getElementById('app');
+      const root = ReactDOM.createRoot(app);
+      root.render(React.createElement(window.PomodoroTimer, { settings }));
+    } else {
+      console.error('PomodoroTimer未找到!');
+      document.getElementById('app').innerHTML = '<p>PomodoroTimer未找到!</p>';
+    }
+  </script>
+</body>
+
+</html>
