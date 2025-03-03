@@ -33,6 +33,12 @@ export default function PomodoroTimer({ settings, content }: Props) {
         }
     }, [isRunning, timeLeft])
 
+    useEffect(() => {
+        if (isWorkMode && settings.autoStartPomodoros) {
+            setIsRunning(true)
+        }
+    }, [])
+
     const savePomodoroSession = (completed: boolean) => {
         const session: PomodoroSession = {
             type: isWorkMode ? 'work' : 'break',
