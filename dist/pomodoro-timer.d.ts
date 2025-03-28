@@ -1,5 +1,12 @@
 import { default as default_2 } from 'react';
 
+declare interface PomodoroSession {
+    type: 'work' | 'break';
+    duration: number;
+    completed: boolean;
+    timestamp: Date;
+}
+
 declare interface PomodoroSettings {
     workDuration: number;
     breakDuration: number;
@@ -10,12 +17,13 @@ declare interface PomodoroSettings {
     autoStartPomodoros: boolean;
 }
 
-declare function PomodoroTimer({ settings, content }: Props): default_2.JSX.Element;
+declare function PomodoroTimer({ settings, content, onSessionComplete }: Props): default_2.JSX.Element;
 export default PomodoroTimer;
 
 declare interface Props {
     settings: PomodoroSettings;
     content?: default_2.ReactNode;
+    onSessionComplete?: (session: PomodoroSession) => void;
 }
 
 export { }

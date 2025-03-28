@@ -1,6 +1,6 @@
 {
   "name": "@j1010/pomodoro-timer",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A React component for pomodoro timer",
   "main": "./dist/pomodoro-timer.umd.js",
   "module": "./dist/pomodoro-timer.js",
