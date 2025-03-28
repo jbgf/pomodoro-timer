@@ -8,10 +8,11 @@ import { PomodoroSettings, PomodoroSession } from './types'
 
 interface Props {
     settings: PomodoroSettings,
-    content?: React.ReactNode
+    content?: React.ReactNode,
+    onSessionComplete?: (session: PomodoroSession) => void
 }
 
-export default function PomodoroTimer({ settings, content }: Props) {
+export default function PomodoroTimer({ settings, content, onSessionComplete }: Props) {
     const [timeLeft, setTimeLeft] = useState(settings.workDuration * 60)
     const [isRunning, setIsRunning] = useState(false)
     const [isWorkMode, setIsWorkMode] = useState(true)
@@ -50,10 +51,18 @@ export default function PomodoroTimer({ settings, content }: Props) {
         const stored = localStorage.getItem('pomodoroSessions')
         const sessions = stored ? JSON.parse(stored) : []
         localStorage.setItem('pomodoroSessions', JSON.stringify([...sessions, session]))
+
+        return session
     }
 
     const handleSessionComplete = () => {
-        savePomodoroSession(true)
+        const completedSession = savePomodoroSession(true)
+
+        // Call the onSessionComplete callback if provided
+        if (onSessionComplete) {
+            onSessionComplete(completedSession)
+        }
+
         /* const audio = new Audio('/sounds/bell.mp3')
         if (settings.soundEnabled) {
             audio.play()
@@ -80,7 +89,12 @@ export default function PomodoroTimer({ settings, content }: Props) {
 
     const resetTimer = () => {
         if (isRunning) {
-            savePomodoroSession(false)
+            const incompleteSession = savePomodoroSession(false)
+
+            // Call the onSessionComplete callback for incomplete sessions if provided
+            if (onSessionComplete) {
+                onSessionComplete(incompleteSession)
+            }
         }
         setIsRunning(false)
         setTimeLeft(isWorkMode ? settings.workDuration * 60 : settings.breakDuration * 60)
